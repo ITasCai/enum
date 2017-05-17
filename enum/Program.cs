@@ -12,7 +12,7 @@ namespace EnumDeam
     }
 
     enum Season {
-        spring,summer,autumn,winter
+        spring,summer,autumn=10,winter
     }
     class Program
     {
@@ -28,33 +28,30 @@ namespace EnumDeam
 
             //Console.ReadKey();
 
-            Console.WriteLine("输入一个月份：");
+            Console.WriteLine("输入一个数字：");
             int yue = Convert.ToInt32(Console.ReadLine());
-            switch (yue)
+
+            Season se = (Season)yue;
+            switch (se)
             {
-                case 3:
-                case 4:
-                case 5:
-                    Console.WriteLine(Season.spring);
+                case Season.spring:
+                    Console.WriteLine("春天");
                     break;
-                case 6:
-                case 7:
-                case 8:
-                    Console.WriteLine(Season.summer);
+                case Season.summer:
+                    Console.WriteLine("夏天");
                     break;
-                case 9:
-                case 10:
-                case 11:
-                    Console.WriteLine(Season.autumn);
+                case Season.autumn:
+                    Console.WriteLine("秋天");
                     break;
-                case 12:
-                case 1:
-                case 2:
-                    Console.WriteLine(Season.winter);
+                case Season.winter:
+                    Console.WriteLine("冬天");
                     break;
+                   
                 default:
+                    Console.WriteLine("萨比");
                     break;
             }
+
             Console.ReadLine();
         }
     }
