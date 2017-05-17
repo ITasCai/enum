@@ -66,21 +66,40 @@ namespace EnumDeam
             //Console.WriteLine(sex);
 
             //GetName  将整数值转换为名称
-            string strName = Enum.GetName(typeof(Season),10);
-            Console.WriteLine(strName);
+            //string strName = Enum.GetName(typeof(Season),10);
+            //Console.WriteLine(strName);
 
-            //GetValues 将整个枚举的整数值遍历出来
-            foreach (int item in Enum.GetValues(typeof(Season)))
-            {
-                Console.Write(item+" ");
-            }
-            Console.WriteLine();
-            //GetNames 将枚举的所有名称遍历出来
-            foreach (string item1 in Enum.GetNames(typeof(Season)))
-            {
-                Console.Write(item1+" ");
-            }
+            ////GetValues 将整个枚举的整数值遍历出来
+            //foreach (int item in Enum.GetValues(typeof(Season)))
+            //{
+            //    Console.Write(item+" ");
+            //}
+            //Console.WriteLine();
+            ////GetNames 将枚举的所有名称遍历出来
+            //foreach (string item1 in Enum.GetNames(typeof(Season)))
+            //{
+            //    Console.Write(item1+" ");
+            //}
 
+            string s = Console.ReadLine();
+            Season se = (Season)Enum.Parse(typeof(Season),s);
+            switch (se)
+            {
+                case Season.spring:
+                    Console.WriteLine("春天");
+                    break;
+                case Season.summer:
+                    Console.WriteLine("夏天");
+                    break;
+                case Season.autumn:
+                    Console.WriteLine("秋天");
+                    break;
+                case Season.winter:
+                    Console.WriteLine("冬天");
+                    break;
+                
+                    
+            }
             Console.ReadLine();
         }
     }
